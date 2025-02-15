@@ -1,7 +1,6 @@
 import React from 'react';
 import { Article } from '@/types';
-import ArticleCard from '../atom/ArticleCard';
-import { Alert } from '../atom';
+import { Alert, ArticleCard } from '../atom';
 
 interface ArticleListProps {
     articles: Article[];

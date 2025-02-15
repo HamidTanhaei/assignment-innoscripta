@@ -5,7 +5,7 @@ interface ArticleCardProps {
     article: Article;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
     return (
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 flex flex-col h-full">
             {article.imageUrl && (
@@ -14,7 +14,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
                         className="rounded-t-lg aspect-video object-cover"
                         src={article.imageUrl}
                         alt={article.title}
-                    /   >
+                        />
                 </a>
             )}
             <div className="p-5 flex-grow">
@@ -39,18 +39,16 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
                 </a>
             </div>
             <div className="mt-auto">
-                    <div className="text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 py-2 px-5">
-                        <p>
-                            {new Date(article.publishedAt).toLocaleDateString()}
-                            <br />
-                            Source: {article.source}
-                            <br />
-                            API Source: {article.apiSource}
-                        </p>
-                    </div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 py-2 px-5">
+                    <p>
+                        {new Date(article.publishedAt).toLocaleDateString()}
+                        <br />
+                        Source: {article.source}
+                        <br />
+                        API Source: {article.apiSource}
+                    </p>
                 </div>
             </div>
+        </div>
     );
 };
-
-export default ArticleCard;
