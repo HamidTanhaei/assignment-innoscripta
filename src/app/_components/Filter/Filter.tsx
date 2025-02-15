@@ -2,7 +2,7 @@
 
 import { FormSelect } from "@/components/atom";
 import SearchBar from "./SearchBar";
-import { Button } from "@/components/atom";
+import { FormButton } from "@/components/atom";
 import { useFilter } from "./Filter.hooks";
 import { dates, sources, categories } from "./Filter.consts";
 
@@ -58,11 +58,11 @@ export const Filter = ({ params = {} }: FilterProps) => {
                 onChange={(e) => setFilters(prev => ({ ...prev, source: e.target.value }))}
             />
             <div className="flex gap-2">
-                {isNavigating ? <Button className="grow cursor-wait" variant="secondary">Loading</Button> : (
+                {isNavigating ? <FormButton className="grow cursor-wait" variant="secondary">Loading</FormButton> : (
                     <>
-                        {isFormDirty && <Button type="submit" className="grow">Apply Filters</Button>}
+                        {isFormDirty && <FormButton type="submit" className="grow">Apply Filters</FormButton>}
                         {hasFilters && !isFiltersSaved && (
-                            <Button 
+                            <FormButton
                                 type="button"
                                 onClick={handleSaveFilters}
                                 title="Save as my feed"
@@ -70,16 +70,16 @@ export const Filter = ({ params = {} }: FilterProps) => {
                                 <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
                                     <path d="M13 20a1 1 0 0 1-.64-.231L7 15.3l-5.36 4.469A1 1 0 0 1 0 19V2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v17a1 1 0 0 1-1 1Z"/>
                                 </svg>
-                            </Button>
+                            </FormButton>
                         )}
                         {showMyFeedButton && (
-                            <Button 
+                            <FormButton
                                 type="button"
                                 onClick={handleShowFeed}
                                 className="grow"
                             >
                                 My Feed
-                            </Button>
+                            </FormButton>
                         )}
                     </>)}
             </div>

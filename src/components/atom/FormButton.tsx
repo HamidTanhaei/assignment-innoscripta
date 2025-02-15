@@ -5,7 +5,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean
 }
 
-export const Button = ({
+export const FormButton = ({
   children,
   className,
   variant = 'primary',
