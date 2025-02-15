@@ -1,14 +1,15 @@
 import React from 'react';
-import { Article } from '@/lib/api';
-import ArticleCard from './ArticleCard';
+import { Article } from '@/types';
+import ArticleCard from '../atom/ArticleCard';
+import { Alert } from '../atom';
 
 interface ArticleListProps {
     articles: Article[];
 }
 
-const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
+export const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
     if (articles.length === 0) {
-        return <p>No articles found.</p>;
+        return <Alert type="info" message="No articles found. Please try different filters." />;
     }
 
     return (
@@ -23,5 +24,3 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
         </div>
     );
 };
-
-export default ArticleList;
