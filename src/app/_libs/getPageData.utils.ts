@@ -1,7 +1,7 @@
 import type { Article as OutputArticle } from '@/types';
-import type { NewsAPIResponse } from './newsapi';
-import { GuardianAPIResponse } from './guardian';
-import { NYTimesAPIResponse } from './nytimes';
+import type { NewsAPIResponse } from '@/lib/api/newsapi';
+import { GuardianAPIResponse } from '@/lib/api/guardian';
+import { NYTimesAPIResponse } from '@/lib/api/nytimes';
 
 function stripHtml(html: string): string {
     return html.replace(/<[^>]*>/g, '');
@@ -18,7 +18,7 @@ export function convertNewsAPIResponse(response: NewsAPIResponse['articles']): O
         imageUrl: article.urlToImage || undefined,
         apiSource: 'Newsapi',
     }));
-} 
+}
 
 export function convertGuardianAPIResponse(response: GuardianAPIResponse['response']['results']): OutputArticle[] {
     return response.map((article): OutputArticle => ({

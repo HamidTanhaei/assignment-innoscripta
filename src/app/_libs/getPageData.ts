@@ -1,4 +1,4 @@
-import { convertGuardianAPIResponse, convertNYTimesAPIResponse, convertNewsAPIResponse } from "@/lib/api/converters";
+import { convertGuardianAPIResponse, convertNYTimesAPIResponse, convertNewsAPIResponse } from "./getPageData.utils";
 import { fetchNewsAPI, fetchGuardianArticles,  fetchNYTimesArticles} from "@/lib/api";
 import { getDateRange } from '@/lib';
 import { Article } from "@/types";

@@ -1,3 +1,3 @@
-export * from './layout/Header';
-export * from './layout/Footer';
+export * from '../../components/layout/MainLayout/Header';
+export * from '../../components/layout/MainLayout/Footer';
 export * from './Filter/Filter';
